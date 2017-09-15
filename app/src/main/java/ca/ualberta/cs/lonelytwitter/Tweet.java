@@ -4,40 +4,40 @@ import java.io.IOException;
 import java.util.Date;
 
 /**
- * Created by joshua2 on 9/16/15.
+ * Created by Mara2020 on 9/14/17.
  */
-public abstract class Tweet extends Object implements Tweetable {
-    private String text;
+public abstract class Tweet implements Tweetable {
+    private String message;
     protected Date date;
 
-    public Tweet(String tweet, Date date) throws TweetTooLongException {
-        this.setText(tweet);
-        this.date = date;
-    }
-
-    public Tweet(String tweet) throws TweetTooLongException {
-        this.setText(tweet);
+    public Tweet(String message) throws TweetTooLongException {
+        this.setMessage(message);
         this.date = new Date();
     }
 
-    public String getText() {
-        return text;
+    public Tweet(String message, Date date) throws TweetTooLongException {
+        this.setMessage(message);
+        this.date = date;
     }
 
-    public void setText(String text) throws TweetTooLongException {
-        if (text.length() <= 140) {
-            this.text = text;
-        } else {
-            throw new TweetTooLongException();
-        }
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public Date getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setMessage(String message) throws TweetTooLongException {
+        if (message.length() <= 140) {
+            this.message = message;
+        } else {
+            throw new TweetTooLongException();
+        }
+    }
+
+    public String getMessage() {
+        return message;
     }
 
     public abstract Boolean isImportant();
