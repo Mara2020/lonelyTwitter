@@ -30,6 +30,11 @@ public abstract class Tweet implements Tweetable {
         return date;
     }
 
+    @Override
+    public String toString() {
+        return date.toString() + " | " + message;
+    }
+
     public void setMessage(String message) throws TweetTooLongException {
         if (message.length() <= 140) {
             this.message = message;
