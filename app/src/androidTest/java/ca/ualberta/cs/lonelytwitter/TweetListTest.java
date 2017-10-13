@@ -42,14 +42,4 @@ public class TweetListTest extends ActivityInstrumentationTestCase2 {
         Tweet returnedTweet = tweets.getTweet(0);
         assertEquals(returnedTweet.getMessage(),tweet.getMessage());
     }
-
-    public void testDuplicateTweet() {
-        TweetList tweets = new TweetList();
-        Tweet tweet = new NormalTweet("test");
-        tweets.addTweet(tweet);
-        assert
-        tweets.addTweet(tweet);
-        Tweet returnedTweet = tweets.getTweet(0);
-        assertEquals(returnedTweet.getMessage(),tweet.getMessage());
-    }
 }
