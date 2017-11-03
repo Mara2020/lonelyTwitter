@@ -3,7 +3,8 @@ package ca.ualberta.cs.lonelytwitter;
 import java.util.ArrayList;
 
 public class TweetList {
-    private ArrayList<Tweet> tweets = new ArrayList<Tweet>();
+    // made the variable final as it is a property cannot be overridden
+    private final ArrayList<Tweet> tweets = new ArrayList<Tweet>();
 
     public TweetList(){
 
